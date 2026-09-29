@@ -1,5 +1,4 @@
  const express = require('express');
-
 const app = express();
 
 app.use(express.json());
@@ -18,19 +17,12 @@ mongoose.connect(mongoURI)
         console.log('Connection Error ' + err);
     });
 
-    app.get('/',(req,res)=>{
-        res.send('hi i am warking fine')
-
-    });
+app.get('/', (req, res) => {
+    res.send('Hi I am working fine');
+});
 
 const category = require('./routes/categoryrouter');
 
-app.get('/', (req, res) => {
-    res.send('My CRUD API');
-});
-
-
 app.use('/category', category);
-app.listen(3000, () => {
-    console.log('Server started in port number 3000');
-});
+
+module.exports = app;
