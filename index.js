@@ -18,6 +18,11 @@ mongoose.connect(mongoURI)
         console.log('Connection Error ' + err);
     });
 
+    app.get('/',(req,res)=>{
+        res.send('hi i am warking fine')
+
+    });
+
 const category = require('./routes/categoryrouter');
 
 app.get('/', (req, res) => {
